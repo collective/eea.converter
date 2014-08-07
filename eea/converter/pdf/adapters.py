@@ -11,7 +11,6 @@ class OptionsMaker(object):
         self._options = None
         self._cookies = None
         self._body = None
-        self._margin = True
         self._outline = True
 
     @property
@@ -34,20 +33,12 @@ class OptionsMaker(object):
     def margin(self):
         """ PDF Margins
         """
-        if not self._margin:
-            return [
-                '--margin-top', '0',
-               '--margin-bottom', '0',
-                '--margin-left', '0',
-                '--margin-right', '0',
-            ]
-        else:
-            return [
-                '--margin-top', '32',
-                '--margin-bottom', '32',
-                '--margin-left', '20',
-                '--margin-right', '20',
-            ]
+        return [
+            '--margin-top', '32',
+            '--margin-bottom', '32',
+            '--margin-left', '0',
+            '--margin-right', '0',
+        ]
 
     @property
     def cookies(self):
@@ -85,9 +76,6 @@ class OptionsMaker(object):
         return self._options
 
     def __call__(self, **kwargs):
-        margin = kwargs.get('margin', None)
-        if margin is not None:
-            self._margin = margin
 
         cookies = kwargs.get('cookies', None)
         if cookies is not None:

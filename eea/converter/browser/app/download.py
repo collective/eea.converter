@@ -47,7 +47,6 @@ class Pdf(BrowserView):
             return ''
 
         options = self.options('')
-        options._margin = False
         options._cookies = self.cookies
         timeout = options.timeout
 
@@ -69,7 +68,6 @@ class Pdf(BrowserView):
             return ''
 
         options = self.options('')
-        options._margin = False
         options._cookies = self.cookies
         timeout = options.timeout
 
@@ -89,7 +87,6 @@ class Pdf(BrowserView):
             return ''
 
         options = self.options('')
-        options._margin = False
         options._cookies = self.cookies
         timeout = options.timeout
 
