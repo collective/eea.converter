@@ -80,7 +80,6 @@ class OptionsMaker(object):
                 '--page-offset', '2',
                 '--print-media-type',
                 '--encoding', 'utf-8',
-                '--quiet',
             ]
             self._options.extend(self.margin)
             self._options.extend(self.outline)

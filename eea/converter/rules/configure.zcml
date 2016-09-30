@@ -10,6 +10,18 @@
     name="Async Export (fail)"
     />
 
+    <interface
+        interface="eea.converter.events.interfaces.IAsyncEventFail"
+        type="plone.contentrules.rule.interfaces.IRuleEventType"
+        name="Async event (fail)"
+    />
+
+    <interface
+        interface="eea.converter.events.interfaces.IAsyncEventSuccess"
+        type="plone.contentrules.rule.interfaces.IRuleEventType"
+        name="Async event (success)"
+    />
+
   <interface
     interface="eea.converter.events.interfaces.IAsyncExportSuccess"
     type="plone.contentrules.rule.interfaces.IRuleEventType"
@@ -22,9 +34,19 @@
     handler=".handlers.execute_event"
     />
 
+    <subscriber
+        for="eea.converter.events.interfaces.IAsyncEventFail"
+        handler=".handlers.execute_event"
+    />
+
   <subscriber
-    for="eea.converter.events.interfaces.IAsyncExportSuccess"
+    for="eea.converter.events.interfaces.IAsyncEventSuccess"
     handler=".handlers.execute_event"
+    />
+
+    <subscriber
+        for="eea.converter.events.interfaces.IAsyncEventSuccess"
+        handler=".handlers.execute_event"
     />
 
   <!-- Custom context -->

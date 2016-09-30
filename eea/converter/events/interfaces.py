@@ -18,6 +18,13 @@ class IAsyncEvent(IEvent):
     """ Base Event Interface for all Async events
     """
 
+class IAsyncEventSuccess(IEvent):
+    """ Base Event Interface for all Async events
+    """
+class IAsyncEventFail(IAsyncEvent):
+    """ Async job for export failed
+    """
+
 class IAsyncExportSuccess(IAsyncEvent):
     """ Async job for export succeeded
     """
